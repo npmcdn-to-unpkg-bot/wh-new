@@ -1,0 +1,72 @@
+<form cg-busy="{promise:distributorInfo.myPromise, message:''}" name="Lform" novalidate ng-submit="distributorInfo.saveInspiration(Lform)">
+
+
+  <div class="modal-header">
+    <h3 class="modal-title">Manufacturer Details</h3>
+
+    <button style="position:absolute; right:20px; top:20px;" ui-sref="^" class="btn btn-md btn-primary">Done</button>
+
+  </div>
+
+  <div class="modal-body">
+
+    <div class="container-fluid">
+
+      <div class="page-header">
+        <h4>{{distributorInfo.distributor.name}}
+        </h4>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12" >
+
+          <img ng-src="{{distributorInfo.distributor.image || 'media/product-placeholder.png'}}" class="inline-inspiration-photo center-block">
+
+        </div>
+
+      </div>
+
+      <br/>
+      <br/>
+
+      <div class="page-header">
+        <h4><i class="fa fa-info"></i> Manufacturer Information</h4>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="bs-example" data-example-id="simple-table">
+            <table class="table table-bordered">
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Manufacturer</th>
+                        <td>
+                          {{distributorInfo.distributor.name}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Description</th>
+                        <td>{{distributorInfo.distributor.description}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" ui-sref="^" class="btn btn-md btn-primary">Done</button>
+  </div>
+
+</form>

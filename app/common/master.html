@@ -1,0 +1,102 @@
+<header class="header">
+
+  <nav ui-scrollfix="+0" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+    <div class="header-top-branding">
+      <img class="header-top-branding-logo" src="media/branding/logo.png">
+
+      <span class="header-top-branding-powered-by">
+        <span>Powered by</span>
+        <img src="media/branding/powered-by.png">
+      </span>
+    </div>
+
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href ui-sref="identify3D.statistics({createdAfter:0, createdBefore:0})" style="margin-left:10px;" class="navbar-brand">Digital Warehouse</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav">
+
+          <!-- <li ui-sref-active-eq="active">
+            <a href ui-sref="identify3D.statistics({createdAfter:0, createdBefore:0})" data-toggle="dropdown"><i class="fa fa-lg fa-tachometer"></i> Dashboard</a>
+          </li> -->
+
+          <li ui-sref-active-eq="active">
+            <a href ui-sref="identify3D.designs({pageNum:1, keyword:'', createdAfter:0, createdBefore:0, prescriptionStatus: 'created'})" data-toggle="dropdown"><i class="fa fa-lg fa-file-code-o"></i> Designs</a>
+          </li>
+
+          <li ui-sref-active-eq="active">
+            <a href ui-sref="identify3D.distributors({pageNum:1, keyword:'', createdAfter:0, createdBefore:0, prescriptionStatus: 'created'})" data-toggle="dropdown"><i class="fa fa-lg fa-building"></i> Manufacturers</a>
+          </li>
+
+          <li ui-sref-active-eq="active">
+            <a href ui-sref="identify3D.distributors.distributorRegistration({pageNum:1, keyword:'', createdAfter:0, createdBefore:0, prescriptionStatus: 'created'})" data-toggle="dropdown"><i class="fa fa-lg fa-building-o"></i> Manufacturer Registration</a>
+          </li>
+
+          <!--
+          <li dropdown ng-class="{active:admin.isActiveMenu(['sc.admin.userRoles', 'sc.admin.registrationSettings', 'sc.admin.reminderSettings', 'sc.admin.surveySettings', 'sc.admin.mobileAppSettings'])}" class="dropdown">
+            <a dropdown-toggle href class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-user-md"></i> Manager <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li ui-sref-active-eq="active"><a href ui-sref="identify3D.users({pageNum:1 ,hasAnsweredPrayer:'no', createdAfter:0, createdBefore:0, keyword:'', sort:'created', ascending:false})"><i class="fa fa-users"></i> Users</a></li>
+              <li ui-sref-active-eq="active"><a href ui-sref="identify3D.prescriptions({pageNum:1, keyword:'', createdAfter:0, createdBefore:0, prescriptionStatus: 'created'})"><i class="fa fa-medkit"></i> Orders</a></li>
+              <li ui-sref-active-eq="active"><a href ui-sref="identify3D.inspirations({pageNum:0})"><i class="fa fa-lightbulb-o"></i> Inspirations</a></li>
+            </ul>
+          </li>
+          -->
+          <!--
+          <li>
+            <a target="_blank" ng-href="{{master.userReportDownloadURL}}" data-toggle="dropdown"><i class="fa fa-lg fa-cloud-download"></i> User Reports</a>
+          </li>
+          -->
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li dropdown class="dropdown">
+            <a dropdown-toggle href class="dropdown-toggle" data-toggle="dropdown"><span>{{master.currentUser.firstName}} {{master.currentUser.lastName}} ({{master.currentUser.username}})</span>  <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href ng-click="master.logout()"><i class="fa fa-power-off"></i> Log Out</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <form ng-show="master.isActiveState('identify3D.users')" class="navbar-form">
+          <div class="form-group">
+
+            <button ng-show="master.selectedUsers.length > 0" ui-sref="identify3D.users.sendNotification" type="button" class="btn btn-sm btn-danger">Send Notification <span ng-show="master.selectedUsers.length > 0" class="label label-info">{{master.selectedUsers.length}}</span></button>
+
+            <button ng-show="master.selectedUsers.length === 0" ui-sref="identify3D.users.sendNotification" type="button" class="btn btn-sm btn-danger">Send Notification <span class="label label-info">everyone</span></button>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<div class="master-content container-fluid">
+
+  <div class="page-header">
+    <!-- <h3>
+    Hello, {{master.currentUser.first_name}}.
+    </h3> -->
+  </div>
+
+  <div ui-view="interface">
+  </div>
+
+</div>
+
+<footer ng-include="'common/footer.html'" class="footer"></footer>

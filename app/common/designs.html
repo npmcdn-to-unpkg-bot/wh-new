@@ -1,0 +1,102 @@
+<div cg-busy="{promise:designs.myPromise, message:''}" class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-1x fa-file-code-o"></i> Design Catalogue</h3>
+        </div>
+
+        <div class="panel-body">
+
+          <br/>
+
+          <div ng-if="designs.noneFound" class="alert alert-danger" role="alert">
+            <p>No designs found.</p>
+          </div>
+
+          <div ng-if="designs.orders.length > 0" class="row">
+
+            <div ng-repeat="order in designs.orders" class="col-sm-3 col-md-3" >
+              <div class="thumbnail" style="height:420px;">
+                <img style="height:240px;" src="{{order.imageUrl}}">
+
+                <div class="caption">
+                  <p>
+                    <span class="label label-xs label-default">{{order.fileFormat}}</span>
+                  </p>
+                  <h4>{{order.name}}</h4>
+                  <p>{{order.description}} </p>
+                  <p>
+                    <a ui-sref=".assign({orderNumber: order.orderNumber})" href class="btn btn-sm btn-default" role="button">Select</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <!-- <table ng-if="designs.orders.length > 0" fixed-table-headers class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>ORDER #</th>
+                <th>CUSTOMER NAME</th>
+                <th>DATE RECEIVED</th>
+                <th>DESIGN NAME</th>
+                <th># ORDERED</th>
+                <th># ASSIGNED</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr ng-repeat="order in designs.orders">
+                <td>{{order.orderNumber}}</td>
+                <td>
+                  <a href popover-trigger="mouseenter" popover-placement="right" popover="{{order.customerCompany}}">{{order.customerName}}<a/>
+                </td>
+                <td>{{order.dateReceived}}</td>
+                <td><b>{{order.name}}</b></td>
+                <td>{{order.quantityOrdered ? order.quantityOrdered : '-'}}</td>
+                <td>{{order.quantityPrinted ? order.quantityPrinted : '-'}}</td>
+                <td>
+                  <span ng-if="order.status === 'New'" class="label label-default">{{order.status}}</span>
+                  <span ng-if="order.status === 'Processing'" class="label label-primary">{{order.status}}</span>
+                  <span ng-if="order.status === 'Done'" class="label label-success">{{order.status}}</span>
+                  <span ng-if="order.status === 'Awaiting Manufacturing'" class="label label-warning">{{order.status}}</span>
+                  <span ng-if="order.status === 'Cancelled'" class="label label-danger">{{order.status}}</span>
+                </td>
+                <td>
+                  <button ui-sref=".assign({orderNumber: order.orderNumber})" type="button" class="btn btn-sm btn-primary">Assign</button>
+                  <button ui-sref=".archive({orderNumber: order.orderNumber})" type="button" class="btn btn-sm btn-default">Archive</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table> -->
+
+        </div>
+
+        <div class="panel-footer">
+<!--
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <pagination  class="pagination-sm" ng-change="designs.navigateToPage()" total-items="designs.pager.totalItems" ng-model="designs.pager.currentPage" items-per-page="designs.pager.itemPerPage" max-size="designs.pager.maxSize" boundary-links="true" rotate="false" num-pages="prescriptions.pager.numPages"></pagination>
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
