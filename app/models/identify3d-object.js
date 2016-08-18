@@ -518,7 +518,6 @@ define(['angular', 'settings', 'lodash', 'jquery'], function (_angular, adminApp
       }
 
       Identify3D.prototype.doBureauSubmitJob = function(designId, deviceId, deviceUrl, data){
-        debugger;
         return this.doBureauJobEndpoint(angular.extend({
           command: 'submit',
           designId: designId,
@@ -528,6 +527,31 @@ define(['angular', 'settings', 'lodash', 'jquery'], function (_angular, adminApp
           }
         }, data));
       }
+
+      Identify3D.prototype.doBureauSubmitJobToVendor = function(designId, distributorId, distributorName, distributorUrl, data){
+        return this.doBureauJobEndpoint(angular.extend({
+          command: 'submit',
+          designId: designId,
+          distributor: {
+            distributorId: distributorId,
+            name: distributorName,
+            url: distributorUrl
+          }
+        }, data));
+      }
+
+      Identify3D.prototype.doBureauSaveJobToVendor = function(designId, distributorId, distributorName, distributorUrl, data){
+        return this.doBureauJobEndpoint(angular.extend({
+          command: 'save',
+          designId: designId,
+          distributor: {
+            distributorId: distributorId,
+            name: distributorName,
+            url: distributorUrl
+          }
+        }, data))
+      }
+
 
       Identify3D.prototype.get3DOrderForm = function(designId){
 

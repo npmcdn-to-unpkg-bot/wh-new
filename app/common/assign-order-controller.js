@@ -18,7 +18,7 @@ define([], function () {
 
     self.vendors = vendorsData;
 
-    self.selectedPrinter = null;
+    self.selectedDistributor = null;
 
     self.orderForm = angular.extend({}, orderFormData);
 
@@ -57,7 +57,8 @@ define([], function () {
         $state.go("^", $stateParams, {reload: true});
       }
 
-      var serverResponse = Identify3D.doBureauSubmitJob(self.order.designId, self.selectedPrinter.deviceId, self.selectedPrinter.url, self.orderForm)
+debugger;
+      var serverResponse = Identify3D.doBureauSubmitJobToVendor(self.order.designId, self.selectedDistributor.distributorId, self.selectedDistributor.name, self.selectedDistributor.url, self.orderForm)
       // .then(function(user){
       //
       //   unblockAndNavigateToParentWithReload();
@@ -142,7 +143,7 @@ define([], function () {
       }
 
 
-      var serverResponse = Identify3D.doBureauSaveJob(self.order.designId, self.selectedPrinter.deviceId, self.selectedPrinter.url, self.orderForm)
+      var serverResponse = Identify3D.doBureauSaveJobToVendor(self.order.designId, self.selectedDistributor.distributorId, self.selectedDistributor.name, self.selectedDistributor.url, self.orderForm)
       // .then(function(fileData){
       //
       //   // console.log(self.orderForm)

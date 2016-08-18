@@ -256,16 +256,16 @@
                                 <label for="exampleInputEmail1">Vendor*</label>
 
                                 <div class="btn-group input-group" dropdown>
-                                    <button type="button" class="btn btn-default dropdown-toggle" ng-class="{ 'btn-danger' : Lform.selectedPrinter.$invalid}" dropdown-toggle ng-disabled="false">
-                                        {{assignOrder.selectedPrinter ? assignOrder.selectedPrinter.name : 'Select Vendor' }} <span class="caret"></span>
+                                    <button type="button" class="btn btn-default dropdown-toggle" ng-class="{ 'btn-danger' : Lform.selectedDistributor.$invalid}" dropdown-toggle ng-disabled="false">
+                                        {{assignOrder.selectedDistributor ? assignOrder.selectedDistributor.name : 'Select Vendor' }} <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                         <li ng-repeat="vendor in assignOrder.vendors">
-                                            <a href ng-click="assignOrder.selectedPrinter=vendor">{{vendor.name}}</a>
+                                            <a href ng-click="assignOrder.selectedDistributor=vendor">{{vendor.name}}</a>
                                         </li>
 
                                     </ul>
-                                    <input type="hidden" name="selectedPrinter" required ng-model="assignOrder.selectedPrinter">
+                                    <input type="hidden" name="selectedDistributor" required ng-model="assignOrder.selectedDistributor">
                                 </div>
                             </div>
 
@@ -320,34 +320,31 @@
 
                       <div class="col-md-6">
 
-                          <div class="form-group" ng-class="{ 'has-error' : Lform.authorizedUser.$invalid}">
+                          <div class="form-group" ng-class="{ 'has-error' : Lform.cust_name.$invalid}">
                               <label for="exampleInputEmail1">Name</label>
-                              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name" name="authorizedUser" ng-model="assignOrder.orderForm.BusinessRules.authorizedUser">
+                              <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Name" name="cust_name" ng-model="assignOrder.orderForm.customer.name">
                           </div>
 
                       </div>
 
                       <div class="col-md-6">
 
-                          <div class="form-group" ng-class="{ 'has-error' : Lform.authorizedUser.$invalid}">
+                          <div class="form-group" ng-class="{ 'has-error' : Lform.cust_company.$invalid}">
                               <label for="exampleInputEmail1">Company</label>
-                              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Company" name="authorizedUser" ng-model="assignOrder.orderForm.BusinessRules.authorizedUser">
+                              <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Company" name="cust_company" ng-model="assignOrder.orderForm.customer.company">
                           </div>
 
                       </div>
 
                       <div class="col-md-10">
 
-                          <div class="form-group" ng-class="{ 'has-error' : Lform.authorizedUser.$invalid}">
+                          <div class="form-group" ng-class="{ 'has-error' : Lform.cust_email.$invalid}">
                               <label for="exampleInputEmail1">Email</label>
-                              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email" name="authorizedUser" ng-model="assignOrder.orderForm.BusinessRules.authorizedUser">
+                              <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Email" name="cust_email" ng-model="assignOrder.orderForm.customer.email">
                           </div>
 
                       </div>
                     </div>
-
-
-
 
                     <div class="page-header">
                         <h4><i class="fa fa-cogs"></i> Advanced Options
