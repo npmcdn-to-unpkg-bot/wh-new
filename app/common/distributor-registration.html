@@ -1,46 +1,46 @@
-<form cg-busy="{promise:distributorRegistration.myPromise, message:''}" name="Lform" novalidate ng-submit="distributorRegistration.saveInspiration(Lform)">
-
+ <form cg-busy="{promise:distributorRegistration.myPromise, message:''}"  name="Lform" novalidate ng-submit="distributorRegistration.register(Lform)">
 
   <div class="modal-header">
     <h3 class="modal-title">Manufacturer Registration</h3>
 
-    <button style="position:absolute; right:20px; top:20px;" ui-sref="identify3D.distributors" class="btn btn-md btn-primary">Cancel</button>
+    <button type="button" style="position:absolute; right:20px; top:20px;" ui-sref="identify3D.distributors" class="btn btn-md btn-primary">Cancel</button>
 
   </div>
 
-  <div class="modal-body">
 
-    <div class="container-fluid">
+  <div  class="modal-body">
 
-      <div class="row">
-        <div class="col-md-12">
+      <div class="container-fluid">
 
-          <!-- <div class="page-header">
-              <h4><i class="fa fa-info"></i> Registration</h4>
-          </div> -->
+        <div class="row">
+          <div class="col-md-12">
 
-          <div class="row">
+            <!-- <div class="page-header">
+                <h4><i class="fa fa-info"></i> Registration</h4>
+            </div> -->
 
-              <div class="col-md-10">
+            <div class="row">
 
-                  <div class="form-group" ng-class="{ 'has-error' : Lform.url.$invalid}">
-                      <label for="exampleInputEmail1">URL*</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="URL" name="url" ng-model="distributorRegistration.url">
-                  </div>
+                <div class="col-md-10">
 
-              </div>
+                    <div class="form-group" ng-class="{ 'has-error' : Lform.url.$invalid}">
+                        <label for="exampleInputEmail1">URL*</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="URL" name="url" ng-model="distributorRegistration.url">
+                    </div>
+
+                </div>
+
+            </div>
 
           </div>
-
         </div>
+
       </div>
-
-    </div>
-
   </div>
 
   <div class="modal-footer">
     <button type="button" class="btn btn-md btn-success" ng-click="distributorRegistration.register(Lform)">Register</button>
   </div>
+
 
 </form>
