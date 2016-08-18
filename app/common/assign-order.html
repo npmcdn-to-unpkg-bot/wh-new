@@ -320,8 +320,8 @@
 
                       <div class="col-md-6">
 
-                          <div class="form-group" ng-class="{ 'has-error' : Lform.cust_name.$invalid}">
-                              <label for="exampleInputEmail1">Name</label>
+                          <div class="form-group required" ng-class="{ 'has-error' : Lform.cust_name.$invalid}">
+                              <label for="exampleInputEmail1">Name*</label>
                               <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Name" name="cust_name" ng-model="assignOrder.orderForm.customer.name">
                           </div>
 
@@ -329,8 +329,8 @@
 
                       <div class="col-md-6">
 
-                          <div class="form-group" ng-class="{ 'has-error' : Lform.cust_company.$invalid}">
-                              <label for="exampleInputEmail1">Company</label>
+                          <div class="form-group required" ng-class="{ 'has-error' : Lform.cust_company.$invalid}">
+                              <label for="exampleInputEmail1">Company*</label>
                               <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Company" name="cust_company" ng-model="assignOrder.orderForm.customer.company">
                           </div>
 
@@ -338,9 +338,9 @@
 
                       <div class="col-md-10">
 
-                          <div class="form-group" ng-class="{ 'has-error' : Lform.cust_email.$invalid}">
-                              <label for="exampleInputEmail1">Email</label>
-                              <input type="text" class="form-control" id="exampleInputEmail1" required placeholder="Email" name="cust_email" ng-model="assignOrder.orderForm.customer.email">
+                          <div class="form-group required" ng-class="{ 'has-error' : Lform.cust_email.$invalid}">
+                              <label for="exampleInputEmail1">Email*</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" required placeholder="Email" name="cust_email" ng-model="assignOrder.orderForm.customer.email">
                           </div>
 
                       </div>
