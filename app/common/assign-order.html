@@ -503,7 +503,7 @@ DEBUG:
                                             <li>
                                                 <a href ng-click="dynamicField._fieldType='VALUE'; dynamicField.value.range=null; dynamicField.value.choice=null">VALUE</a>
                                             </li>
-                                            <li>
+                                            <li ng-if="dynamicField.name !== 'Material' && dynamicField.name !== 'Accuracy'">
                                                 <a href ng-click="dynamicField._fieldType='RANGE'; dynamicField.value.value=null; dynamicField.value.choice=null">RANGE</a>
                                             </li>
                                             <!-- <li>
