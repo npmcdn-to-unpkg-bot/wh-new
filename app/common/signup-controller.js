@@ -23,7 +23,7 @@ define([], function () {
 
           Identify3D.doBureauLogin({username: self.loginForm.user, password: self.loginForm.pass}).then(function (m) {
 
-            $state.go("identify3D.statistics", {}, { reload:true, location:'replace' });
+            $state.go("identify3D.designs", {pageNum:1, keyword:'', createdAfter:0, createdBefore:0, prescriptionStatus: 'created'}, { reload:true, location:'replace' });
 
           }, function (m) {
    					 //  self.loginError = m.error;
