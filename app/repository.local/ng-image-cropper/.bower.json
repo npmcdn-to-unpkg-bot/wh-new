@@ -42,8 +42,8 @@
     "Content-Length": "12471",
     "Content-Type": "application/zip; charset=utf-8"
   },
-  "_source": "https://npmcdn.com/angular-image-cropper@1.1.7/bower.zip",
+  "_source": "https://unpkg.com/angular-image-cropper@1.1.7/bower.zip",
   "_target": "~1.1.7",
-  "_originalSource": "https://npmcdn.com/angular-image-cropper@1.1.7/bower.zip",
+  "_originalSource": "https://unpkg.com/angular-image-cropper@1.1.7/bower.zip",
   "_direct": true
 }
